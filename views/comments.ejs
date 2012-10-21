@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+	<% for(var i=0; i<comments.length; i++) {%>
+	   <li>Name : <%= comments[i].name %> , Comment : <%= comments[i].comment %></li>
+	<% } %>
+  </body>
+</html>
