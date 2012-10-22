@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <form action="/comments/new" method="POST">
+      <input type="input" name="name"/>
+      <input type="input" name="comment"/>
+      <input type="submit" value="Add Comment"/>
+    </form>
+  </body>
+</html>
