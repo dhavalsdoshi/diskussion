@@ -1,0 +1,9 @@
+@(comments: Iterator[Comment])
+
+@main("All Comments!") {
+    <ul>
+    @comments.map { comment =>
+        <div><label>User: </label>@comment.name<label>    Comment: </label>@comment.comment</div>
+    }
+    </ul>
+}

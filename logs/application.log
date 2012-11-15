@@ -1,0 +1,9 @@
+2012-11-15 18:44:02,010 - [INFO] - from play in main 
+Listening for HTTP on port 9000...
+
+2012-11-15 18:44:29,419 - [INFO] - from play in play-akka.actor.default-dispatcher-2 
+mongodb [default] connected at 127.0.0.1:27017/diskussion
+
+2012-11-15 18:44:29,422 - [INFO] - from play in play-akka.actor.default-dispatcher-2 
+Application started (Dev)
+
