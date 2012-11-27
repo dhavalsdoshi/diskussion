@@ -1,12 +1,12 @@
 @(comments: Iterator[Comment])
 
 @main("All Comments!") {
-    <ul>
+    <ul id="comments">
     @comments.map { comment =>
-        <li><label>User: </label>@comment.name<label>    Comment: </label>@comment.comment</li>
+        <li><label>User: </label>@comment.name<label> Comment: </label>@comment.comment</li>
     }
     </ul>
-    <input name="name" type="text" id="nameBox">
-    <input name="comment" type="text" id="commentBox">
+    <input name="name" type="text" id="nameBox" placeholder="name">
+    <textarea name="comment" id="commentBox" placeholder="please enter your comment" rows="2" cols="40"></textarea>
     <button id="create">Create</button>
 }
