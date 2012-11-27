@@ -6,8 +6,6 @@ import play.api.data._
 import play.api.data.Forms._
 
 object Application extends Controller {
-
-
   val Home = Redirect(routes.Application.list)
 
   def list() = Action {
@@ -19,20 +17,20 @@ object Application extends Controller {
     tuple(
       "name" -> text,
       "comment" -> text
-    )
+    )//(Comment.apply)(Comment.unapply)
   )
 
   def save = Action {
     implicit request =>
-    commentForm.bindFromRequest.fold(
+    commentForm.bindFromRequest
+      .fold(
       formWithErrors => {
         Home.flashing("error" -> "Screw you")
       },
       comment => {
         Comment.insert(Comment(name = comment._1,comment = comment._2))
-        Home.flashing("success" -> "Comment by %s has been created".format("name"))
+        Ok("success")
       }
     )
   }
-
 }

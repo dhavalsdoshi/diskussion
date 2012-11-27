@@ -6,9 +6,7 @@
         <li><label>User: </label>@comment.name<label>    Comment: </label>@comment.comment</li>
     }
     </ul>
-    @helper.form(action = routes.Application.save) {
-        <input name="name" type="text">
-        <input name="comment" type="text">
-        <input type="submit"/>
-    }
+    <input name="name" type="text" id="nameBox">
+    <input name="comment" type="text" id="commentBox">
+    <button id="create">Create</button>
 }
