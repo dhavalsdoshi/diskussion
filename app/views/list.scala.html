@@ -1,14 +1,16 @@
-@(comments: Iterator[Comment])
+@(comments: Iterator[Comment],clientId: String, pageId : String)
 
 @main("All Comments!") {
     <ul id="comments">
     @comments.map { comment =>
-        <li><label>User: </label>@comment.name<label> Comment: </label>@comment.comment</li>
+        <li><label>User: </label>@comment.username<label> Comment: </label>@comment.text</li>
     }
     </ul>
     @helper.form(action = routes.Application.save) {
-        <input name="name" type="text" id="nameBox" placeholder="name">
-        <textarea name="comment" id="commentBox" placeholder="please enter your comment" rows="2" cols="40"></textarea>
+        <input name="clientId" type="hidden" id="clientId" value="@clientId">
+        <input name="pageId" type="hidden" id="pageId" value="@pageId">
+        <input name="username" type="text" id="usernameTextBox" placeholder="name">
+        <textarea name="text" id="commentTextBox" placeholder="please enter your comment" rows="2" cols="40"></textarea>
         <input type="submit" id="create" value="add comment">
     }
 }

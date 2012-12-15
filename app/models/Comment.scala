@@ -6,11 +6,7 @@ import com.mongodb.casbah.Imports._
 import se.radley.plugin.salat._
 import mongoContext._
 
-case class Comment(
-  id: ObjectId = new ObjectId,
-  name: String,
-  comment: String
-)
+case class Comment(id: ObjectId = new ObjectId,username: String,text: String, pageId:String, clientId: String)
 
 object Comment extends ModelCompanion[Comment,ObjectId]{
   val dao = new SalatDAO[Comment, ObjectId](collection = mongoCollection("comments")) {}
