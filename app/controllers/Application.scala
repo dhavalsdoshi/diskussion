@@ -13,7 +13,7 @@ object Application extends Controller {
     implicit request =>
       newCommentForm.bindFromRequest.fold(
         formWithErrors => {
-          BadRequest("as")
+          BadRequest("Insufficient Parameters. Please mention clientId & pageId ")
         },
         newCommentForm => {
           val comments = Comment.find(MongoDBObject("pageId" -> newCommentForm._2, "clientId" -> newCommentForm._1))
